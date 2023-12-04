@@ -14,8 +14,6 @@ after_initialize do
       if SiteSetting.sso_extra_params_enabled
         retain_keys = SiteSetting.sso_extra_params.split('|')
         session[:sso_retain] = params.select { |key, _value| retain_keys.include?(key) }
-        puts "Retaining"
-        puts session[:sso_retain]
       end
       old_redirect_to_login
     end

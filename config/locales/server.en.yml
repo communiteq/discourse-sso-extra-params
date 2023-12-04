@@ -1,0 +1,4 @@
+en:
+  site_settings:
+    sso_extra_params_enabled: "Enable SSO Extra Parameters Plugin."
+    sso_extra_params: "Parameters to retain during SSO process."

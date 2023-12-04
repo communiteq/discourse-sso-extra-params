@@ -1,0 +1,8 @@
+plugins:
+  sso_extra_params_enabled:
+    default: false
+  sso_extra_params:
+    client: false
+    default: ""
+    type: list
+    list_type: simple

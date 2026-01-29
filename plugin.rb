@@ -1,5 +1,5 @@
 # name: discourse-sso-extra-params
-# version: 1.0
+# version: 1.1
 # author: richard@communiteq.com
 # about: Pass extra parameters in the SSO process
 # url: https://www.github.com/communiteq/discourse-sso-extra-params
@@ -13,7 +13,7 @@ after_initialize do
     def redirect_to_login
       if SiteSetting.sso_extra_params_enabled
         retain_keys = SiteSetting.sso_extra_params.split('|')
-        session[:sso_retain] = params.select { |key, _value| retain_keys.include?(key) }
+        session[:sso_retain] = params.to_unsafe_h.slice(*retain_keys)
       end
       old_redirect_to_login
     end
